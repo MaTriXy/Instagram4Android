@@ -30,7 +30,7 @@ allprojects {
 Then add the following to your app level ```build.gradle``` file, use the version number of the latest release:
 ```Gradle
 dependencies {
-    compile 'com.github.charlieAndroidDev:Instagram4Android:v0.1.10'
+    compile 'com.github.charlieAndroidDev:Instagram4Android:v0.1.12'
 }
 ```
 
@@ -67,7 +67,7 @@ private void loginToInstagram(final String username, final String password) {
 
     }
 
-private Observable<InstagramLoginResult> attemptLogin(final Instagram4Android instagram, final String username, final String password) {
+private Observable<InstagramLoginResult> attemptLogin(final Instagram4Android instagram) {
 
         Observable<InstagramLoginResult> observable = Observable.create(observableEmitter -> {
 
@@ -86,7 +86,7 @@ The String resource ```R.string.login_success``` is ```"ok"```.
 ### Get user info
 
 ```Java
-InstagramSearchUsernameResult result = instagram.sendRequest(new InstagramSearchUsernameRequest("example_username");
+InstagramSearchUsernameResult result = instagram.sendRequest(new InstagramSearchUsernameRequest("example_username"));
 InstagramUser user = result.getUser();
 ```
 
